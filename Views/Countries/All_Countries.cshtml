@@ -1,0 +1,45 @@
+<!-- ####################################################################################################### -->
+<div class="wrapper col2">
+  <div id="topnav">
+      <ul>
+          <li><a href="/Home/Index">Home</a></li>
+          <li class="active"><a href="All_Countries">Countries</a>
+              <ul>
+                  <div>
+                      @foreach(var item in Model)
+                      {
+                          <li> <a href="/Countries/Countries/@item.Name" style="color:white"> @item.Name </a> </li>
+                      }
+                  </div>
+              </ul>
+          </li>
+          <li><a href="/LiveScores/live_scores">Live Scores</a></li>
+          <li class="last"><a href="/Ranking/Ranking">Rankings</a></li>
+      </ul>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col3">
+  <div id="container">
+      <div class="row">
+          <div class="gallery">
+              <h2>All Teams</h2>
+                  <ul>
+                      @foreach(var item in Model)
+                      {
+                          <li> <a href="/Countries/Countries/@item.Name"> <img src="~/images/demo/@item.Pic" alt=""> </a> </li>
+                      }
+                  </ul>
+          </div>
+  </div>
+</div>
+
+    </div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col4">
+  <div id="container2">
+    <div id="content">
+    </div>
+  </div>
+</div>
+<!-- ####################################################################################################### -->

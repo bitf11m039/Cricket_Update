@@ -1,0 +1,115 @@
+@{
+    Layout=null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+    <head profile="http://gmpg.org/xfn/11">
+        <title>Cricket Updates</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <script type="text/javascript" src="~/Scripts/jquery-1.7.1.js"></script>
+        <link rel="stylesheet" href="~/Content/layout.css" type="text/css" />
+        <script type="text/javascript" src="~/Scripts/jquery-1.4.1.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery.slidepanel.setup.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery-ui-1.7.2.custom.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery.tabs.setup.js"></script>
+        
+        <!-- Validation for Login -->
+        
+        <script type="text/javascript">
+            function verify() {
+
+                if (document.Form.Name.value == "") {
+                    alert("Enter your Name.");
+                    return false;
+                }
+                if (document.Form.Password.value == "") {S
+                    alert("Enter your Password.");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+    
+    <body>    
+        <div id="result"></div>        
+        <div class="wrapper col0">
+            <div id="topbar">
+                <div id="slidepanel">
+                    <div class="topbox">
+                        <h2>Login</h2>
+                        <form  name="Form" onsubmit = "return verify()" method = "post" action = "/Home/Login">
+                            <fieldset>
+                                <legend>User Login Form</legend>
+                                <label for="username">
+                                    Name: <input type="text" name="Name"/>
+                                </label>
+                                
+                                <label for="userpass">
+                                    Password: <input type="password" name="Password" />
+                                </label>
+
+                                <p>
+                                    <input type="submit" id="userlogin" value="Login" />&nbsp;
+                                </p>
+                            </fieldset>
+                        </form>
+                    </div>
+                    
+                    <br class="clear" />
+                </div>
+                <div id="loginpanel">
+                    <ul>
+                        <li class="left">Log In Here &raquo;</li>
+                        <li class="right" id="toggle"><a id="slideit" href="#slidepanel">User</a><a id="closeit" style="display: none;" href="#slidepanel">Close Panel</a></li>
+                    </ul>
+                </div>
+                <br class="clear" />
+            </div>
+        </div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col1">
+  <div id="header">
+    <div id="logo">
+      <h1><a href="#">Cricket Updates</a></h1>
+    </div>
+    <div class="fl_right">
+      <ul>
+          <li class="last"><a href="/Home/SignUp">SignUp</a></li>
+      </ul>
+        <p> Tel: 0321-4357407 </p>
+        <p> Mail: temourzakir39@gmail.com</p>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col2">
+  <div id="topnav">
+    
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col3">
+    
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col4">
+  <div id="container">
+      <h3>This Page only can view by an Admin.</h3>
+      <h4>You are not an admin. So, you cannot view this page.</h4>
+
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col6">
+        <div id="copyright">
+            <p class="fl_left">Copyright &copy; 2011 - All Rights Reserved - <a href="#">Domain Name</a></p>
+            <p class="fl_right">Template by <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+            <br class="clear" />
+        </div>
+</div>
+
+</body>
+</html>

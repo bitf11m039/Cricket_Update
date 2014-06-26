@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <title>Cricket Updates</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="imagetoolbar" content="no" />
+ <script type="text/javascript" src="~/Scripts/jquery-1.7.1.js"></script>
+<link rel="stylesheet" href="~/Content/layout.css" type="text/css" />
+<script type="text/javascript" src="~/Scripts/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.slidepanel.setup.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.tabs.setup.js"></script>
+
+</head>
+<body>
+    <div class="wrapper col0">
+    <div id="topbar">
+        <div id="loginpanel">
+            <ul>
+                <li class="left">Logout Here &raquo;</li>
+                <li class="right" id="toggle"><a id="slideit" href="/Home/Logout">User</a></li>
+            </ul>
+        </div>
+        <br class="clear" />
+    </div>
+</div>
+    
+    <div class="wrapper col1">
+        <div id="header">
+            <div id="logo">
+                <h1><a href="#">Cricket Updates</a></h1>
+            </div>
+            <div class="fl_right">
+                <ul>
+                    <li class="last"><a href="/Countries/Search">Search</a></li>
+                    <li><a href="/Home/SignUp">SignUp</a></li>
+                </ul>
+                <p> Tel: 0321-4357407 </p>
+                <p> Mail: temourzakir39@gmail.com</p>
+            </div>
+            <br class="clear" />
+        </div>
+    </div>
+    @RenderBody()
+    
+    <div class="wrapper col6">
+        <div id="copyright">
+            <p class="fl_left">Copyright &copy; 2011 - All Rights Reserved - <a href="#">Domain Name</a></p>
+            <p class="fl_right">Template by <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+            <br class="clear" />
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

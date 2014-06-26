@@ -1,0 +1,275 @@
+@{
+    Layout=null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+    <head profile="http://gmpg.org/xfn/11">
+        <title>Cricket Updates</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <script type="text/javascript" src="~/Scripts/jquery-1.7.1.js"></script>
+        <link rel="stylesheet" href="~/Content/layout.css" type="text/css" />
+        <script type="text/javascript" src="~/Scripts/jquery-1.4.1.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery.slidepanel.setup.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery-ui-1.7.2.custom.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery.tabs.setup.js"></script>
+
+        <!-- Validation for SignUp -->
+        <script type="text/javascript">
+            function verify() {
+                if (document.Form.innings.value == "") {
+                    alert("Enter Innings No.");
+                    return false;
+                }
+                if (document.Form.team1.value == "") {
+                    alert("Enter Name of Team1.");
+                    return false;
+                }
+                if (document.Form.team1_score.value == "") {
+                    alert("Enter Score of Team1.");
+                    return false;
+                }
+                if (document.Form.team2.value == "") {
+                    alert("Enter Name of Team2.");
+                    return false;
+                }
+                if (document.Form.team2_score.value == "") {
+                    alert("Enter Score of Team2.");
+                    return false;
+                }
+                if (document.Form.player1.value == "") {
+                    alert("Enter Name of Player1.");
+                    return false;
+                }
+                if (document.Form.player1_score.value == "") {
+                    alert("Enter Score of Player1.");
+                    return false;
+                }
+                if (document.Form.player1_balls.value == "") {
+                    alert("Enter No of balls Player1 faced.");
+                    return false;
+                }
+                if (document.Form.player2.value == "") {
+                    alert("Enter Name of Player2.");
+                    return false;
+                }
+
+                if (document.Form.player2_score.value == "") {
+                    alert("Enter Score of Player2.");
+                    return false;
+                }
+                if (document.Form.player2_balls.value == "") {
+                    alert("Enter No of balls Player2 faced.");
+                    return false;
+                }
+                if (document.Form.out.value == "") {
+                    alert("Enter No of Outs.");
+                    return false;
+                }
+                if (document.Form.over.value == "") {
+                    alert("Enter Over No.");
+                    return false;
+                }
+                if (document.Form.ball.value == "") {
+                    alert("Enter Ball No.");
+                    return false;
+                }
+                if (document.Form.bowler.value == "") {
+                    alert("Enter Name of Bowler.");
+                    return false;
+                }
+                if (document.Form.bowler_over.value == "") {
+                    alert("Enter No of Bowler's over.");
+                    return false;
+                }
+                if (document.Form.bowler_wicket.value == "") {
+                    alert("Enter Wickets taken by Bowler.");
+                    return false;
+                }
+                if (document.Form.venue.value == "") {
+                    alert("Enter Venue.");
+                    return false;
+                }
+                if (document.Form.Match.value == "") {
+                    alert("Select Match Type.");
+                    return false;
+                }
+                return true;
+            }
+
+    </script>
+</head>
+<body>
+        <div class="wrapper col0">
+            <div id="topbar">
+                <div id="slidepanel">
+                    
+                </div>
+                <div id="loginpanel">
+                    <ul>
+                        <li class="left">Logout Here &raquo;</li>
+                        <li class="right" id="toggle"><a id="slideit" href="/Home/Logout">User</a></li>
+                    </ul>
+                </div>
+                <br class="clear" />
+            </div>
+        </div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col1">
+  <div id="header">
+    <div id="logo">
+      <h1><a href="#">Cricket Updates</a></h1>
+    </div>
+    <div class="fl_right">
+        <ul>
+            <li class="last"><a href="/Countries/Search">Search</a></li>
+            <li> <a href="/Home/SignUp">SignUp</a> </li>
+        </ul>
+        <p> Tel: 0321-4357407 </p>
+        <p> Mail: temourzakir39@gmail.com</p>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col2">
+  <div id="topnav">
+      <ul>
+          <li><a href="/Home/Index">Home</a> </li>
+          <li><a href="/Countries/All_Countries">Countries</a> </li>
+          <li class="active"><a href="/LiveScores/live_scores">Live Scores</a> </li>
+          <li class="last"><a href="/Ranking/Ranking">Rankings</a></li>
+      </ul>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col3">
+  <div id="container">
+      <form class="register" name="Form" onsubmit = "return verify()" action="/LiveScores/Show_LiveMatch" method="post">
+            <h1> <b> Match Updates </b> </h1>
+            <fieldset class="row1">
+                <p>
+                    <label> Innings </label>
+                    <input type="text" class="long" id="innings" name ="innings" placeholder="Innings"/>
+                </p>
+
+                <p>
+                    <label> Team1 </label>
+                    <input type="text" class="long" id="team1" name ="team1" placeholder="Batting Team"/>
+                </p>
+
+                <p>
+                    <label> Team1 Socre </label>
+                    <input type="text" class="long" id="team1_score" name ="team1_score" placeholder="Team1 Score"/>
+                </p>
+
+                <p>
+                    <label> Team2 </label>
+                    <input type="text" class="long" id="team2" name ="team2" placeholder="Bowling Team"/>
+                </p>
+
+                <p>
+                    <label> Team2 Socre </label>
+                    <input type="text" class="long" id="team2_score" name ="team2_score" placeholder="Team2 Score"/>
+                    
+                </p>
+
+                <p>
+                    <label> Player1 * </label>
+                    <input type="text" id="player1" name="player1" placeholder="Player1 Name"/>
+                </p>
+
+                <p>
+                    <label> Player1 Score </label>
+                    <input type="text" class="long" id="player1_score" name ="player1_score" placeholder="Player1 Score"/>
+                </p>
+
+                <p>
+                    <label> Player1 Balls Faced </label>
+                    <input type="text" class="long" id="player1_balls" name ="player1_balls" placeholder="Player1 Balls Faced"/>
+                </p>
+
+                <p>
+                    <label> Player2 </label>
+                    <input type="text" id="player2" name="player2" placeholder="Player2 Name"/>
+                </p>
+
+                <p>
+                    <label> Player2 Score </label>
+                    <input type="text" class="long" id="player2_score" name ="player2_score" placeholder="Player2 Score"/>
+                </p>
+
+                <p>
+                    <label> Player2 Balls Faced </label>
+                    <input type="text" class="long" id="player2_balls" name ="player2_balls" placeholder="Player2 Balls Faced"/>
+                </p>
+
+                <p>
+                    <label> Wickets Down </label>
+                    <input type="text" id="out" name="out" placeholder="Out"/>
+                </p>
+
+                <p>
+                    <label> Over </label>
+                    <input type="text" id="over" name="over" placeholder="Over No"/>
+                </p>
+
+                <p>
+                    <label> Ball </label>
+                    <input type="text" id="ball" name="ball" placeholder="Ball No"/>
+                </p>
+
+                <p>
+                    <label> Bowler </label>
+                    <input type="text" id="bowler" name="bowler" placeholder="Bowler"/>
+                </p>
+
+                <p>
+                    <label> Bowler's Over </label>
+                    <input type="text" id="bowler_over" name="bowler_over" placeholder="Over No"/>
+                </p>
+
+                <p>
+                    <label> Bowler's Wickets </label>
+                    <input type="text" id="bowler_wicket" name="bowler_wicket" placeholder="Bowler's Wickets"/>
+                </p>
+
+                <p>
+                    <label> Venue </label>
+                    <input type="text" class="long" id="venue" name="venue" placeholder="Venue"/>
+                </p>
+
+                 <p>
+                    <label> Match </label>
+                    <select id="Match" name="Match">
+                        <option value=""></option>
+                        <option value="Test"> Test </option>
+                        <option value="ODI">  ODI  </option>
+                        <option value="T20">  T20  </option>
+                    </select>
+                </p>
+            </fieldset>
+
+              <div> <br />  <input type="submit" style = "height: 40px; width: 80px"  value="Show"/> </div>
+      </form>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col4">
+  <div id="container2">
+    <div id="content">
+    </div>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+    <div class="wrapper col6">
+        <div id="copyright">
+            <p class="fl_left">Copyright &copy; 2011 - All Rights Reserved - <a href="#">Domain Name</a></p>
+            <p class="fl_right">Template by <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+            <br class="clear" />
+        </div>
+</div>
+</body>
+</html>
+<!-- ####################################################################################################### -->

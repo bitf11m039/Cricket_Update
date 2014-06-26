@@ -1,0 +1,142 @@
+@{
+    Layout=null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+    <head profile="http://gmpg.org/xfn/11">
+        <title>Cricket Updates</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <link href="~/Content/layout.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="~/Scripts/jquery-1.7.1.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery-1.4.1.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery.slidepanel.setup.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery-ui-1.7.2.custom.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery.tabs.setup.js"></script>
+        
+        <!-- Validation for Login -->
+        
+        <script type="text/javascript">
+            function verify() {
+
+                if (document.Form.Name.value == "") {
+                    alert("Enter your Name.");
+                    return false;
+                }
+                if (document.Form.Password.value == "") {
+                    alert("Enter your Password.");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+    
+    <body>    
+        <div id="result"></div>        
+        <div class="wrapper col0">
+            <div id="topbar">
+                <div id="slidepanel">
+                    <div class="topbox">
+                        <h2>Login</h2>
+                        <form  name="Form" onsubmit = "return verify()" method = "post" action = "/Home/Login">
+                            <fieldset>
+                                <legend>User Login Form</legend>
+                                <label for="username">
+                                    Name: <input type="text" name="Name"/>
+                                </label>
+                                
+                                <label for="userpass">
+                                    Password: <input type="password" name="Password" />
+                                </label>
+
+                                <p>
+                                    <input type="submit" id="userlogin" value="Login" />&nbsp;
+                                </p>
+                            </fieldset>
+                        </form>
+                    </div>
+                    
+                    <br class="clear" />
+                </div>
+                <div id="loginpanel">
+                    <ul>
+                        <li class="left">Log In Here &raquo;</li>
+                        <li class="right" id="toggle"><a id="slideit" href="#slidepanel">User</a><a id="closeit" style="display: none;" href="#slidepanel">Close Panel</a></li>
+                    </ul>
+                </div>
+                <br class="clear" />
+            </div>
+        </div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col1">
+  <div id="header">
+    <div id="logo">
+      <h1><a href="#">Cricket Updates</a></h1>
+    </div>
+    <div class="fl_right">
+      <ul>
+          <li class="last"><a href="/Home/SignUp">SignUp</a></li>
+      </ul>
+        <p> Tel: 0321-4357407 </p>
+        <p> Mail: temourzakir39@gmail.com</p>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col2">
+  <div id="topnav">
+    
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col3">
+    <div id="featured_slide">
+        <div id="featured_wrap">
+            <ul id="featured_tabs">
+                <li><a href="#fc1">Imran Khan<br />
+          <span>Best Captain in Cricket History Ever...!!</span></a></li>
+        <li><a href="#fc2">Cricket<br />
+          <span>The Game of Gentlemen...!!</span></a></li>
+        <li><a href="#fc3">Ball<br />
+          <span>Catch it...!!</span></a></li>
+        <li class="last"><a href="#fc4">Pak Cricket Team<br />
+          <span>Unpredictable...!!</span></a></li>
+      </ul>
+      <div id="featured_content">
+        <div class="featured_box" id="fc1"><img src="~/images/demo/1.gif" alt="" height="450" width="450"/>
+        </div>
+        <div class="featured_box" id="fc2"><img src="~/images/demo/2.gif" alt="" />
+        </div>
+        <div class="featured_box" id="fc3"><img src="~/images/demo/3.gif" alt="" />
+        </div>
+        <div class="featured_box" id="fc4"><img src="~/images/demo/4.gif" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col4">
+  <div id="container">
+      <ul>
+        <li>
+            <h2><b>Cricket</b></h2>
+          <p> Cricket is a bat-and-ball game played between two teams of 11 players each on a field at the centre of which is a rectangular 22-yard long pitch. Each team takes its turn to bat, attempting to score runs, while the other team fields. Each turn is known as an innings. The bowler delivers the ball to the batsman who attempts to hit the ball with his bat away from the fielders so he can run to the other end of the pitch (which is counted as one run) without getting run out (the event in which the fielder throws the ball directly onto wickets or to a player who is near to wickets so he can dislodge them from the ground before the batsman or the non-striker has reached the crease). Each batsman (the other is called non-striker) continues batting until he is out. The batting team continues batting until ten batsmen are out or specified number of overs (6 countable balls bowled is 1 over) have been bowled, at which point the teams switch roles and the fielding team comes in to bat.</p>
+          <p class="readmore"><a href="http://en.wikipedia.org/wiki/Cricket">Continue Reading &raquo;</a></p>
+        </li>
+      </ul>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col6">
+        <div id="copyright">
+            <p class="fl_left">Copyright &copy; 2011 - All Rights Reserved - <a href="#">Domain Name</a></p>
+            <p class="fl_right">Template by <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+            <br class="clear" />
+        </div>
+</div>
+
+</body>
+</html>

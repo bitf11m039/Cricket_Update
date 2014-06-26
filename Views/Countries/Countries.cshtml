@@ -1,0 +1,46 @@
+﻿<!-- ####################################################################################################### -->
+<div class="wrapper col2">
+  <div id="topnav">
+      <ul>
+          <li><a href="/Home/Index">Home</a></li>
+          <li class="active"><a href="/Countries/All_Countries">Countries</a>
+              <ul>
+                  <li class="last"><a href="/Countries/Countries">@ViewBag.x</a></li>
+              </ul>
+          </li>
+          <li><a href="/LiveScores/live_scores">Live Scores</a></li>
+          <li class="last"><a href="/Ranking/Ranking">Rankings</a></li>
+      </ul>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col3">
+  <div id="container">
+      <h1> <b> Team Records </b> </h1>
+      
+
+      <ul>
+          <h2> <b> Series </b> </h2>
+      </ul>
+
+      <ul>
+          <li class="active"> @Html.ActionLink("Test Matches", "Countries_Result", "Countries", new { id = @ViewBag.x, name = "Test"},null) </li>
+      </ul>
+
+      <ul>
+          <li> @Html.ActionLink("One-Day Internationals", "Countries_Result", "Countries", new { id = @ViewBag.x, name = "ODI"},null) </li>
+      </ul>
+      
+      <ul>
+          <li> @Html.ActionLink("Twenty20 Internationals", "Countries_Result", "Countries", new { id = @ViewBag.x, name = "T20"},null) </li>
+      </ul>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col4">
+  <div id="container2">
+    <div id="content">
+    </div>
+  </div>
+</div>
+<!-- ####################################################################################################### -->

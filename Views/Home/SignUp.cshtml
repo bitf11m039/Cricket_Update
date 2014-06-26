@@ -1,0 +1,307 @@
+@{
+    Layout=null;
+}
+
+@Model CricketUpdates.Database2Entities.Users;
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+    <head profile="http://gmpg.org/xfn/11">
+        <title>Cricket Updates</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <script type="text/javascript" src="~/Scripts/jquery-1.7.1.js"></script>
+        <link rel="stylesheet" href="~/Content/layout.css" type="text/css" />
+        <script type="text/javascript" src="~/Scripts/jquery-1.4.1.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery.slidepanel.setup.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery-ui-1.7.2.custom.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery.tabs.setup.js"></script>
+
+        <!-- Validation for SignUp -->
+        <script type="text/javascript">
+            function verify() {
+                if (document.Form.Name.value == "") {
+                    alert("Enter your Name.");
+                    return false;
+                }
+                if (document.Form.Email.value == "") {
+                    alert("Enter your Email.");
+                    return false;
+                }
+                if (document.Form.Password.value == "") {
+                    alert("Enter your Password.");
+                    return false;
+                }
+                if (document.Form.RepeatPassword.value == "") {
+                    alert("Enter your Password Again.");
+                    return false;
+                }
+                if (document.Form.Category.checked == "") {
+                    alert("Select Your Category.");
+                    return false;
+                }
+                if (document.Form.Phone.value == "") {
+                    alert("Enter your Phone No.");
+                    return false;
+                }
+                if (document.Form.City.value == "") {
+                    alert("Enter your City.");
+                    return false;
+                }
+                if (document.Form.Country.value == "") {
+                    alert("Enter your Country.");
+                    return false;
+                }
+                if (document.Form.Gender.checked == "") {
+                    alert("Select Your Gender.");
+                    return false;
+                }
+                if (document.Form.Date.value == "") {
+                    alert("Select Date.");
+                    return false;
+                }
+                if (document.Form.Month.value == "") {
+                    alert("Select Month.");
+                    return false;
+                }
+                if (document.Form.Year.value == "") {
+                    alert("Select Year.");
+                    return false;
+                }
+                if (document.Form.Nationality.value == "") {
+                    alert("Select Your Nationality.");
+                    return false;
+                }
+                return true;
+        }
+
+    </script>
+
+    @Scripts.Render("~/bundles/jquery")
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#checking').hide();
+
+            $('#usercheck').click(function () {
+                var userName = $('#Name').val();
+                $('#checking').show();
+                $.getJSON("/Home/CheckUserName?userName=" + userName, function (data) {
+                    $('#checking').hide();
+                    if (data) {
+                        $('#result').text("User already exists in database. Use another name.");
+                    }
+                    else {
+                        $('#result').text("User Name is available");
+                    }
+                });
+            });
+        });
+    </script>
+
+    </head>
+<body>
+    <div class="wrapper col0">
+        <div id="topbar">
+
+        </div>
+        <br /> <br />
+    </div>
+
+<!-- ####################################################################################################### -->
+<div class="wrapper col1">
+  <div id="header">
+    <div id="logo">
+      <h1><a href="#">Cricket Updates</a></h1>
+    </div>
+    <div class="fl_right">
+        <p> Tel: 0321-4357407 </p>
+        <p> Mail: temourzakir39@gmail.com</p>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col2">
+  <div id="topnav">
+  </div>
+</div>
+<!-- ####################################################################################################### -->   
+<div class="wrapper col3">
+    <div id="container">
+        <form class="register" name="Form" onsubmit = "return verify()" action="/Home/AddUser" method="post">
+            <h1> <b> Sign Up </b> </h1>
+            <h1> <b> It's free and always will be. </b> </h1>
+            <p> * obligatory fields </p>
+            <fieldset class="row1">
+                <legend> Account Details </legend>
+                <p>
+                    <label> Name * </label>
+                    <input type="text" class="long" id="Name" name ="Name" placeholder="Name"/>
+                    <input type="button" id="usercheck" name="usercheck" value="Check" />
+                    <div id="checking">Checking...</div>
+                    <div id="result"></div>
+                </p>
+
+                <p>
+                    <label> Email * </label>
+                    <input type="text" id="Email" name="Email" placeholder="Email"/>
+                </p>
+
+                <p>
+                    <label> Password * </label>
+                    <input type="text" id="Password" name="Password" placeholder="Password"/>
+                </p>
+
+                <p>
+                    <label> Repeat Password * </label>
+                    <input type="text" id="RepeatPassword" name="RepeatPassword" placeholder="Repeat Password"/>
+                </p>
+
+                <p>
+                   <label id="Category"> Category * </label>
+                    <input type="radio" name="Category" value="Admin"/>
+                    <label> Admin </label>
+                    <input type="radio" name="Category" value="User"/>
+                    <label> User </label>
+                </p>
+
+                <p>
+                    <label> Phone * </label>
+                    <input type="text" maxlength="10" id="Phone" name="Phone" placeholder="Phone"/>
+                </p>
+
+                <p>
+                    <label> City * </label>
+                    <input type="text" class="long" id="City" name="City" placeholder="City"/>
+                </p>
+
+                <p>
+                    <label> Country * </label>
+                    <select id="Country" name="Country">
+                        <option value="Pakistan">      Pakistan      </option>
+                        <option value="India">         India       </option>
+                        <option value="Saudi Arabia">  Saudi Arabia  </option>
+                        <option value="England">       England       </option>
+                        <option value="United States"> United States </option>
+                    </select>
+                </p>
+                
+                <p>
+                   <label for="Gender" id="Gender"> Gender * </label>
+                    <input type="radio" name="Gender" value="Male"/>
+                    <label class="gender"> Male </label>
+                    <input type="radio" name="Gender" value="Female"/>
+                    <label class="gender"> Female </label>
+                </p>
+
+                <p>
+                    <label> BirthDate * </label>
+                    <select class="date" id="Date" name="BirthDate">
+                        <option value="0"> Date </option>
+                        <option value="1">  01 </option>
+                        <option value="2">  02 </option>
+                        <option value="3">  03 </option>
+                        <option value="4">  04 </option>
+                        <option value="5">  05 </option>
+                        <option value="6">  06 </option>
+                        <option value="7">  07 </option>
+                        <option value="8">  08 </option>
+                        <option value="9">  09 </option>
+                        <option value="10"> 10 </option> 
+                        <option value="11"> 11 </option>
+                        <option value="12"> 12 </option>
+                        <option value="13"> 13 </option>
+                        <option value="14"> 14 </option>
+                        <option value="15"> 15 </option>
+                        <option value="16"> 16 </option>
+                        <option value="17"> 17 </option>
+                        <option value="18"> 18 </option>
+                        <option value="19"> 19 </option>
+                        <option value="20"> 20 </option>
+                        <option value="21"> 21 </option>
+                        <option value="22"> 22 </option>
+                        <option value="23"> 23 </option>
+                        <option value="24"> 24 </option>
+                        <option value="25"> 25 </option>
+                        <option value="26"> 26 </option>
+                        <option value="27"> 27 </option>
+                        <option value="28"> 28 </option>
+                        <option value="29"> 29 </option>
+                        <option value="30"> 30 </option>
+                        <option value="31"> 31 </option>
+                    </select>
+                    
+                    <select id="Month" name="Month">
+                        <option value="0">         Month   </option>
+                        <option value="January">   January   </option>
+                        <option value="February">  February  </option>
+                        <option value="March">     March     </option>
+                        <option value="April">     April     </option>
+                        <option value="May">       May       </option> 
+                        <option value="June">      June      </option>
+                        <option value="July">      July      </option>
+                        <option value="August">    August    </option>
+                        <option value="September"> September </option>
+                        <option value="October">   October   </option>
+                        <option value="November">  November  </option>
+                        <option value="December">  December  </option>
+                    </select>
+
+                    <select id="Year" name="Year">
+                        <option value="0"> Year </option>
+                        <option value="2014"> 2014 </option>
+                        <option value="2013"> 2013 </option>
+                        <option value="2012"> 2012 </option>
+                        <option value="2011"> 2011 </option>
+                        <option value="2010"> 2010 </option> 
+                        <option value="2009"> 2009 </option>
+                        <option value="2008"> 2008 </option>
+                        <option value="2007"> 2007 </option>
+                        <option value="2006"> 2006 </option>
+                        <option value="2005"> 2005 </option>
+                        <option value="2004"> 2004 </option>
+                        <option value="2003"> 2003 </option>
+                        <option value="2002"> 2002 </option>
+                        <option value="2001"> 2001 </option>
+                        <option value="2000"> 2000 </option>
+                        <option value="1999"> 1999 </option>
+                        <option value="1998"> 1998 </option> 
+                        <option value="1997"> 1997 </option>
+                        <option value="1996"> 1996 </option>
+                        <option value="1995"> 1995 </option>
+                        <option value="1994"> 1994 </option>
+                        <option value="1993"> 1993 </option>
+                        <option value="1992"> 1992 </option>
+                        <option value="1991"> 1991 </option>
+                        <option value="1990"> 1990 </option>
+                    </select>
+                </p>
+                <p>
+                    <label for="Nationality"> Nationality * </label>
+                    <select id="Nationality" name="Nationality">
+                        <option value="0">             Nationality   </option>
+                        <option value="Pakistan">      Pakistan      </option>
+                        <option value="India">         India         </option>
+                        <option value="Saudi Arabia">  Saudi Arabia  </option>
+                        <option value="England">       England       </option>
+                        <option value="United States"> United States </option>
+                    </select>
+                </p>
+            </fieldset>
+            
+            <div> <br />  <input type="submit" style = "height: 40px; width: 80px"  value="Sign Up"/> </div>
+        </form>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col6">
+        <div id="copyright">
+            <p class="fl_left">Copyright &copy; 2011 - All Rights Reserved - <a href="#">Domain Name</a></p>
+            @*<p class="fl_right">Template by <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>*@
+            <br class="clear" />
+        </div>
+</div>
+</body>
+</html>
+<!-- ####################################################################################################### -->

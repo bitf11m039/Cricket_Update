@@ -1,0 +1,78 @@
+﻿<!-- ####################################################################################################### -->
+<div class="wrapper col2">
+  <div id="topnav">
+    <ul>
+        <li class="active"> @Html.ActionLink("Home","Index","Home")
+            <ul>
+                <li><a href="/Countries/Add/@ViewBag.x">Add</a></li>
+                <li class="last"><a href="/Countries/Update/@ViewBag.x">Update</a></li>
+            </ul>
+        </li>
+        <li> @Html.ActionLink("Countries", "All_Countries", "Countries") </li>
+        <li> @Html.ActionLink("Live Scores","live_scores","LiveScores", new { id = @ViewBag.x},null) </li>
+        <li> @Html.ActionLink("Rankings","Ranking","Ranking") </li>
+    </ul>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col3">
+    <div id="featured_slide">
+        <div id="featured_wrap">
+            <ul id="featured_tabs">
+                <li><a href="#fc1">Imran Khan<br />
+          <span>Best Captain in Cricket History Ever...!!</span></a></li>
+        <li><a href="#fc2">Cricket<br />
+          <span>The Game of Gentlemen...!!</span></a></li>
+        <li><a href="#fc3">Ball<br />
+          <span>Catch it...!!</span></a></li>
+        <li class="last"><a href="#fc4">Pak Cricket Team<br />
+          <span>Unpredictable...!!</span></a></li>
+      </ul>
+      <div id="featured_content">
+        <div class="featured_box" id="fc1"><img src="~/images/demo/1.gif" alt="" />
+        </div>
+        <div class="featured_box" id="fc2"><img src="~/images/demo/2.gif" alt="" />
+        </div>
+        <div class="featured_box" id="fc3"><img src="~/images/demo/3.gif" alt="" />
+        </div>
+        <div class="featured_box" id="fc4"><img src="~/images/demo/4.gif" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col4">
+  <div id="container">
+    <div id="hpage">
+      <ul>
+        <li>
+          <h2> Alastair Cook (England Captain) </h2>
+          <div class="imgholder"><a href="#"><img src="~/images/demo/200x140(1).gif" alt="" /></a></div>
+          <p>Alastair Nathan Cook, MBE (born 25 December 1984) is an English cricket player. He is the captain of the England test and one-day international teams. He is a left-handed opening batsman who plays county cricket for Essex. Cook played for Essex's Academy and made his debut for the first XI in 2003. He played in a variety of England's youth teams from 2000 until his call up to the Test side in 2006.</p>
+          <p class="readmore"> @Html.ActionLink("Continue Reading","http://en.wikipedia.org/wiki/Alastair_Cook","wiki")&raquo;</p>
+        </li>
+        <li>
+          <h2>Boom Boom Against India In world cup 2011</h2>
+          <div class="imgholder"><a href="#"><img src="~/images/demo/200x140(2).gif" alt="" /></a></div>
+          <p>Shahid Afridi (Urdu: شاہدآفریدی‎), born Sahibzada Mohammad Shahid Khan Afridi also known as Boom Boom Afridi born on 1 March 1980)[2] is a Pakistani cricketer. Between 1996 and 2012, Afridi played 27 Tests, 350 One Day Internationals, and 59 Twenty20 Internationals (T20Is) for the Pakistani national team. He made his ODI debut on 2 October 1996 against Kenya and his Test debut on 22 October 1998 against Australia.</p>
+          <p class="readmore"> @Html.ActionLink("Continue Reading","http://en.wikipedia.org/wiki/Shahid_Afridi","wiki")&raquo;</p>
+        </li>
+        <li>
+          <h2> Michael Hussey (Best Player in 2006)</h2>
+          <div class="imgholder"><a href="#"><img src="~/images/demo/200x140(3).gif" alt="" /></a></div>
+          <p>Michael Edward Killeen Hussey (born 27 May 1975) also known as Mike Hussey is a former Australian Test cricketer. Hussey is also widely known by his nickname Mr Cricket. Hussey was a relative latecomer to both the one-day international and Test Australian teams, debuting at 28 and 30 years of age in the respective formats, with 15,313 first-class runs before making his Test debut. However, he has had a highly successful international career, being the top-ranked ODI batsman in the world in 2006.</p>
+          <p class="readmore"> @Html.ActionLink("Continue Reading","http://en.wikipedia.org/wiki/Michael_Hussey")&raquo;</p>
+        </li>
+        <li class="last">
+          <h2>Glenn Maxwell (Astonishing Player)</h2>
+          <div class="imgholder"><a href="#"><img src="~/images/demo/200x140(4).gif" alt="" /></a></div>
+          <p>Glenn James Maxwell (born 14 October 1988) is an Australian cricketer, who plays for Victoria in Sheffield Shield, limited overs and Twenty20 matches. He also plays for the Fitzroy Doncaster club in Melbourne. He is an all-rounder, bowling right-arm off spin and batting with an average of over 30 for Victoria in interstate one day cricket.[4] In 2011, he set the record for the fastest ever half-century in Australian interstate one day cricket, reaching 50 runs off 19 balls.</p>
+          <p class="readmore"> @Html.ActionLink("Continue Reading","http://en.wikipedia.org/wiki/Michael_Hussey")&raquo;</p>
+        </li>
+      </ul>
+      <br class="clear" />
+    </div>
+  </div>
+</div>
+<!-- ####################################################################################################### -->

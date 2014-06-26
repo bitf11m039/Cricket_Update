@@ -1,0 +1,182 @@
+@{
+    Layout=null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+    <head profile="http://gmpg.org/xfn/11">
+        <title>Cricket Updates</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <script type="text/javascript" src="~/Scripts/jquery-1.7.1.js"></script>
+        <link rel="stylesheet" href="~/Content/layout.css" type="text/css" />
+        <script type="text/javascript" src="~/Scripts/jquery-1.4.1.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery.slidepanel.setup.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery-ui-1.7.2.custom.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery.tabs.setup.js"></script>
+
+        <!-- Validation for SignUp -->
+        <script type="text/javascript">
+            function verify() {
+                if (document.Form.Team.value == "") {
+                    alert("Enter Team Name.");
+                    return false;
+                }
+                if (document.Form.old_Opposition.value == "") {
+                    alert("Enter Opposition.");
+                    return false;
+                }
+                if (document.Form.old_Season.value == "") {
+                    alert("Enter Season.");
+                    return false;
+                }
+                if (document.Form.TeamName.value == "") {
+                    alert("Enter New Team Name.");
+                    return false;
+                }
+                if (document.Form.Opposition.value == "") {
+                    alert("Enter New Opposition.");
+                    return false;
+                }
+                if (document.Form.Season.value == "") {
+                    alert("Enter New Season.");
+                    return false;
+                }
+                if (document.Form.Winner.value == "") {
+                    alert("Enter New Winner.");
+                    return false;
+                }
+                if (document.Form.Margin.value == "") {
+                    alert("Enter New Margin.");
+                    return false;
+                }
+                if (document.Form.Venue.value == "") {
+                    alert("Enter New Venue.");
+                    return false;
+                }
+                return true;
+        }
+
+    </script>
+</head>
+    <body>
+        <div class="wrapper col0">
+            <div id="topbar">
+                <div id="slidepanel">
+                    
+                </div>
+                <div id="loginpanel">
+                    <ul>
+                        <li class="left">Logout Here &raquo;</li>
+                        <li class="right" id="toggle"><a id="slideit" href="/Home/Logout">User</a></li>
+                    </ul>
+                </div>
+                <br class="clear" />
+            </div>
+        </div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col1">
+  <div id="header">
+    <div id="logo">
+      <h1><a href="#">Cricket Updates</a></h1>
+    </div>
+    <div class="fl_right">
+        <ul>
+            <li class="last"><a href="/Countries/Search">Search</a></li>
+            <li><a href="/Home/SignUp">SignUp</a></li>
+        </ul>
+        <p> Tel: 0321-4357407 </p>
+        <p> Mail: temourzakir39@gmail.com</p>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col2">
+  <div id="topnav">
+      <ul>
+          <li class="active"><a href="/Home/Index">Home</a>
+              <ul>
+                  <li class="last"><a href="/Countries/Update_Match">Update Match</a></li>
+              </ul>
+          </li>
+          <li><a href="/Countries/All_Countries">Countries</a> </li>
+          <li><a href="/LiveScores/live_scores">Live Scores</a></li>
+          <li class="last"><a href="/Ranking/Ranking">Rankings</a></li>
+      </ul>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col3">
+  <div id="container">
+      <form class="register" name="Form" onsubmit = "return verify()" action="/Countries/Update_Matches" method="post">
+            <h1> <b> Match Info </b> </h1>
+            <fieldset class="row1">
+                <p>
+                    <label> Team </label>
+                    <input type="text" class="long" id="Team" name ="Team" placeholder="Team Name"/>
+                </p>
+
+                <p>
+                    <label> Opposition </label>
+                    <input type="text" class="long" id="old_Opposition" name ="old_Opposition" placeholder="Opposition"/>
+                </p>
+                
+                <p>
+                    <label> Season </label>
+                    <input type="text" class="long" id="old_Season" name ="old_Season" placeholder="Season"/>
+                </p>
+
+                <p>
+                    <h1> <b> Update Info </b> </h1>
+                    <label> Team Name </label>
+                    <input type="text" class="long" id="TeamName" name ="TeamName" placeholder="Team Name"/>
+                </p>
+
+                <p>
+                    <label> Opposition </label>
+                    <input type="text" id="Opposition" name="Opposition" placeholder="New Opposition"/>
+                </p>
+
+                <p>
+                    <label> Season </label>
+                    <input type="text" id="Season" name="Season" placeholder="Season"/>
+                </p>
+
+                <p>
+                    <label> Winner </label>
+                    <input type="text" id="Winner" name="Winner" placeholder="Winner"/>
+                </p>
+
+                <p>
+                    <label> Margin </label>
+                    <input type="text" maxlength="10" id="Margin" name="Margin" placeholder="Margin"/>
+                </p>
+
+                <p>
+                    <label> Venue </label>
+                    <input type="text" class="long" id="Venue" name="Venue" placeholder="Venue"/>
+                </p>
+            </fieldset>
+
+              <div> <br />  <input type="submit" style = "height: 40px; width: 80px"  value="Save"/> </div>
+      </form>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col4">
+  <div id="container2">
+    <div id="content">
+    </div>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+    <div class="wrapper col6">
+        <div id="copyright">
+            <p class="fl_left">Copyright &copy; 2011 - All Rights Reserved - <a href="#">Domain Name</a></p>
+            @*<p class="fl_right">Template by <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>*@
+            <br class="clear" />
+        </div>
+</div>
+</body>
+</html>
+<!-- ####################################################################################################### -->
